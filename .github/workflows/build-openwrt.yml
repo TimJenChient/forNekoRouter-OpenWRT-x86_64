@@ -1,0 +1,147 @@
+name: Build OpenWrt x86_64
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+
+concurrency:
+  group: openwrt-x86-64-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+env:
+  OPENWRT_TAG: v25.12.2
+  OPENWRT_BRANCH: openwrt-25.12
+  OPENWRT_DIR: openwrt
+  TARGET: x86
+  SUBTARGET: 64
+  PROFILE: generic
+  ROOTFS_PARTSIZE: "3072"
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Free runner disk space
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/lib/android /opt/hostedtoolcache/CodeQL || true
+          sudo docker image prune -af >/dev/null 2>&1 || true
+          df -h
+
+      - name: Install build dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get -qq update
+          sudo apt-get -qq install --no-install-recommends \
+            ack antlr3 asciidoc autoconf automake autopoint binutils bison build-essential \
+            bzip2 ccache cmake cpio curl device-tree-compiler fastjar flex gawk gettext \
+            gcc-multilib g++-multilib genisoimage git gperf haveged help2man intltool \
+            libc6-dev-i386 libelf-dev libfuse-dev libglib2.0-dev libgmp3-dev libltdl-dev \
+            libmpc-dev libmpfr-dev libncurses-dev libpython3-dev libreadline-dev libssl-dev \
+            libtool lrzsz msmtp ninja-build p7zip p7zip-full patch pkgconf python3 \
+            python3-pyelftools python3-setuptools qemu-utils rsync scons squashfs-tools \
+            subversion swig texinfo uglifyjs unzip wget xmlto xxd zlib1g-dev zstd
+
+      - name: Prepare build metadata
+        shell: bash
+        run: |
+          set -euo pipefail
+          build_date="$(date -u +%Y%m%d-%H%M%S)"
+          release_tag="openwrt-${OPENWRT_TAG}-x86_64-${build_date}-run${GITHUB_RUN_NUMBER}"
+          release_name="OpenWrt ${OPENWRT_TAG} x86_64 ${build_date}"
+          {
+            echo "BUILD_DATE=${build_date}"
+            echo "RELEASE_TAG=${release_tag}"
+            echo "RELEASE_NAME=${release_name}"
+          } >> "${GITHUB_ENV}"
+
+      - name: Clone OpenWrt source
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --depth 1 --branch "${OPENWRT_TAG}" https://github.com/openwrt/openwrt.git "${OPENWRT_DIR}"
+          cp feeds.conf.default "${OPENWRT_DIR}/feeds.conf.default"
+
+      - name: Update feeds
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "${OPENWRT_DIR}"
+          ./scripts/feeds update -a
+          ./scripts/feeds install -a
+
+      - name: Sync third-party packages
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "${OPENWRT_DIR}/package/custom"
+          rsync -a package/custom/ "${OPENWRT_DIR}/package/custom/"
+          chmod +x scripts/prepare_custom_packages.sh
+          ./scripts/prepare_custom_packages.sh "${OPENWRT_DIR}"
+
+      - name: Apply local .config
+        shell: bash
+        run: |
+          set -euo pipefail
+          cp .config "${OPENWRT_DIR}/.config"
+          cd "${OPENWRT_DIR}"
+          make defconfig
+          grep -q '^CONFIG_TARGET_x86_64=y' .config
+          grep -q '^CONFIG_USE_APK=y' .config
+          grep -q '^CONFIG_TARGET_ROOTFS_PARTSIZE=3072$' .config
+
+      - name: Download sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "${OPENWRT_DIR}"
+          make download -j"$(nproc)"
+          find dl -type f -size -1024c -print -delete
+          if find dl -type f -size -1024c | grep -q .; then
+            echo "download stage left broken files in dl/" >&2
+            exit 1
+          fi
+
+      - name: Build firmware
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "${OPENWRT_DIR}"
+          make -j"$(nproc)" || make -j1 V=sc
+
+      - name: Collect release files
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p release
+          cp "${OPENWRT_DIR}/.config" "release/openwrt-${OPENWRT_TAG}-x86_64.config"
+          cp -a "${OPENWRT_DIR}/bin/targets/${TARGET}/${SUBTARGET}/." release/
+          rm -rf release/packages
+          ls -lah release
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: openwrt-${{ env.OPENWRT_TAG }}-x86_64
+          path: release/*
+          if-no-files-found: error
+
+      - name: Publish GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.RELEASE_TAG }}
+          name: ${{ env.RELEASE_NAME }}
+          generate_release_notes: true
+          files: release/*
