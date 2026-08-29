@@ -82,7 +82,7 @@ copy_dir "${WORK_DIR}/argon-config" "luci-app-argon-config"
 clone_repo "torbp" "https://github.com/zerolabnet/luci-app-torbp.git" "1.0"
 copy_dir "${WORK_DIR}/torbp" "luci-app-torbp"
 
-clone_repo "openclash" "https://github.com/vernesong/OpenClash.git" "v0.47.075"
+clone_repo "openclash" "https://github.com/vernesong/OpenClash.git" "v0.47.156"
 copy_dir "${WORK_DIR}/openclash/luci-app-openclash" "luci-app-openclash"
 
 clone_repo "wechatpush" "https://github.com/tty228/luci-app-wechatpush.git" "v3.6.12"
