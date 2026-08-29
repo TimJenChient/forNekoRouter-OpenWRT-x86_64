@@ -102,7 +102,6 @@ rewrite_makefile_if_needed "${CUSTOM_DIR}/luci-app-torbp/Makefile"
 
 required_makefiles=(
   "amneziawg-tools/Makefile"
-  "geoview/Makefile"
   "kmod-amneziawg/Makefile"
   "luci-app-argon-config/Makefile"
   "luci-app-diskman/Makefile"
