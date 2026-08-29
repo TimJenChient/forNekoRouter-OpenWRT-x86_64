@@ -102,11 +102,8 @@ rewrite_makefile_if_needed "${CUSTOM_DIR}/luci-app-torbp/Makefile"
 
 required_makefiles=(
   "amneziawg-tools/Makefile"
-  "chinadns-ng/Makefile"
-  "dns2socks/Makefile"
   "geoview/Makefile"
   "kmod-amneziawg/Makefile"
-  "luci-app-aliddns/Makefile"
   "luci-app-argon-config/Makefile"
   "luci-app-diskman/Makefile"
   "luci-app-lucky/Makefile"
@@ -119,18 +116,7 @@ required_makefiles=(
   "luci-proto-amneziawg/Makefile"
   "luci-theme-argon/Makefile"
   "lucky/Makefile"
-  "shadowsocks-libev/Makefile"
-  "shadowsocks-rust/Makefile"
-  "shadowsocksr-libev/Makefile"
-  "simple-obfs/Makefile"
-  "sing-box/Makefile"
-  "tcping/Makefile"
-  "trojan-plus/Makefile"
-  "tuic-client/Makefile"
-  "v2ray-geodata/Makefile"
-  "v2ray-plugin/Makefile"
   "wrtbwmon/Makefile"
-  "xray-core/Makefile"
 )
 
 for rel in "${required_makefiles[@]}"; do
