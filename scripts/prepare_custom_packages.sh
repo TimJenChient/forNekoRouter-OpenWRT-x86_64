@@ -112,7 +112,6 @@ required_makefiles=(
   "luci-app-lucky/Makefile"
   "luci-app-openclash/Makefile"
   "luci-app-openclaw/Makefile"
-  "luci-app-passwall2/Makefile"
   "luci-app-syncdial/Makefile"
   "luci-app-timewol/Makefile"
   "luci-app-torbp/Makefile"
