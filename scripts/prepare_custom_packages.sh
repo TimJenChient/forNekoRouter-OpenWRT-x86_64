@@ -88,8 +88,8 @@ copy_dir "${WORK_DIR}/torbp" "luci-app-torbp"
 clone_repo "openclash" "https://github.com/vernesong/OpenClash.git" "v0.47.075"
 copy_dir "${WORK_DIR}/openclash/luci-app-openclash" "luci-app-openclash"
 
-clone_repo "passwall2" "https://github.com/Openwrt-Passwall/openwrt-passwall2.git" "25.12.2-1"
-copy_dir "${WORK_DIR}/passwall2/luci-app-passwall2" "luci-app-passwall2"
+clone_repo "wechatpush" "https://github.com/tty228/luci-app-wechatpush.git" "v3.6.12"
+copy_dir "${WORK_DIR}/wechatpush" "luci-app-wechatpush"
 
 clone_repo "awg" "https://github.com/2Grey/awg-openwrt.git" "v25.12.2"
 copy_dir "${WORK_DIR}/awg/kmod-amneziawg" "kmod-amneziawg"
