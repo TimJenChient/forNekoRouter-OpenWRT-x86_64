@@ -1,4 +1,4 @@
-# Build-OpenWRT-Custom-x86_0402
+# forNekoRouter-OpenWRT-x86_64
 
 用于 GitHub Actions 云编译 `x86_64` OpenWrt 的自定义镜像构建项目，基于官方 `v25.12.2` 版本，启用 `apk` 包管理，并在编译完成后自动上传固件和配置文件到 GitHub Release。
 
