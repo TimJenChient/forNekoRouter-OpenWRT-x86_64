@@ -37,7 +37,7 @@
   - `luci-theme-argon` - Argon UI 主题
 
 - **应用**：
-  - `luci-app-lucky` - 幸运软件
+  - `luci-app-lucky` - 大吉
   - `luci-app-openclash` - Clash 内核（v0.47.075）
   - `luci-app-openclaw` - OpenClaw v2.0.2
   - `luci-app-syncdial` - 同步拨号
