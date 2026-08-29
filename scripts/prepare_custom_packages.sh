@@ -113,7 +113,7 @@ copy_dir "${WORK_DIR}/passwall-packages/v2ray-plugin" "v2ray-plugin"
 copy_dir "${WORK_DIR}/passwall-packages/xray-core" "xray-core"
 copy_dir "${WORK_DIR}/passwall-packages/xray-plugin" "xray-plugin"
 
-clone_repo "awg" "https://github.com/Slava-Shchipunov/awg-openwrt.git" "v25.12.2"
+clone_repo "awg" "https://github.com/2Grey/awg-openwrt.git" "v25.12.2"
 copy_dir "${WORK_DIR}/awg/kmod-amneziawg" "kmod-amneziawg"
 copy_dir "${WORK_DIR}/awg/amneziawg-tools" "amneziawg-tools"
 copy_dir "${WORK_DIR}/awg/luci-proto-amneziawg" "luci-proto-amneziawg"
