@@ -52,7 +52,7 @@ rewrite_makefile_if_needed() {
 }
 
 clone_repo "diskman" "https://github.com/sbwml/luci-app-diskman.git" "main"
-copy_dir "${WORK_DIR}/diskman/files/luci-app-diskman" "luci-app-diskman"
+copy_dir "${WORK_DIR}/diskman/luci-app-diskman" "luci-app-diskman"
 
 clone_repo "lucky" "https://github.com/kenzok8/openwrt-packages.git" "master"
 copy_dir "${WORK_DIR}/lucky/luci-app-lucky/luci-app-lucky" "luci-app-lucky"
