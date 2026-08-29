@@ -73,9 +73,6 @@ copy_dir "${WORK_DIR}/wrtbwmon-ui/luci-app-wrtbwmon" "luci-app-wrtbwmon"
 clone_repo "wrtbwmon" "https://github.com/brvphoenix/wrtbwmon.git" "master"
 copy_dir "${WORK_DIR}/wrtbwmon/wrtbwmon" "wrtbwmon"
 
-clone_repo "aliddns" "https://github.com/honwen/luci-app-aliddns.git" "v20210117"
-copy_dir "${WORK_DIR}/aliddns" "luci-app-aliddns"
-
 clone_repo "argon-theme" "https://github.com/jerrykuku/luci-theme-argon.git" "v2.4.3"
 copy_dir "${WORK_DIR}/argon-theme" "luci-theme-argon"
 
@@ -112,6 +109,7 @@ required_makefiles=(
   "luci-app-timewol/Makefile"
   "luci-app-torbp/Makefile"
   "luci-app-wrtbwmon/Makefile"
+  "luci-app-wechatpush/Makefile"
   "luci-proto-amneziawg/Makefile"
   "luci-theme-argon/Makefile"
   "lucky/Makefile"
