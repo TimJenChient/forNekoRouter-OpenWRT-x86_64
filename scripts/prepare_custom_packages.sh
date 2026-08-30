@@ -88,7 +88,7 @@ copy_dir "${WORK_DIR}/openclash/luci-app-openclash" "luci-app-openclash"
 clone_repo "wechatpush" "https://github.com/tty228/luci-app-wechatpush.git" "v3.6.12"
 copy_dir "${WORK_DIR}/wechatpush" "luci-app-wechatpush"
 
-clone_repo "awg" "https://github.com/2Grey/awg-openwrt.git" "v25.12.2"
+clone_repo "awg" "https://github.com/2Grey/awg-openwrt.git" "master"
 copy_dir "${WORK_DIR}/awg/kmod-amneziawg" "kmod-amneziawg"
 copy_dir "${WORK_DIR}/awg/amneziawg-tools" "amneziawg-tools"
 copy_dir "${WORK_DIR}/awg/luci-proto-amneziawg" "luci-proto-amneziawg"
