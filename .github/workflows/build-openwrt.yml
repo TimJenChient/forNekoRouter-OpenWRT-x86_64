@@ -15,7 +15,7 @@ permissions:
   contents: write
 
 env:
-  OPENWRT_TAG: v25.12.2
+  OPENWRT_TAG: v25.12.5
   OPENWRT_BRANCH: openwrt-25.12
   OPENWRT_DIR: openwrt
   TARGET: x86
