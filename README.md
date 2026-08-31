@@ -1,13 +1,13 @@
 # forNekoRouter-OpenWRT-x86_64
 
-用于 GitHub Actions 云编译 `x86_64` OpenWrt 的自定义镜像构建项目，基于官方 `v25.12.2` 版本，启用 `apk` 包管理，并在编译完成后自动上传固件和配置文件到 GitHub Release。
+用于 GitHub Actions 云编译 `x86_64` OpenWrt 的自定义镜像构建项目，基于官方 `v25.12.5` 版本，启用 `apk` 包管理，并在编译完成后自动上传固件和配置文件到 GitHub Release。
 
 ## 📋 项目特性
 
-- **基础版本固定**：官方 `openwrt/openwrt` `v25.12.2`
+- **基础版本固定**：官方 `openwrt/openwrt` `v25.12.5`
 - **Feeds 固定**：所有官方 feeds 固定为 `openwrt-25.12` 分支
 - **目标平台**：`x86/64 generic`（可部署在 KVM、VMware、VirtualBox 等虚拟化平台）
-- **RootFS 分区**：固定为 `3072 MiB`
+- **RootFS 分区**：固定为 `8192 MiB`
 - **包管理**：启用 `apk` 包管理器
 - **文件格式**：EXT4 分区 + GRUB EFI 引导
 - **自动上传**：编译完成后自动上传固件和最终 `.config` 至 Release
@@ -38,7 +38,7 @@
 
 - **应用**：
   - `luci-app-lucky` - 大吉
-  - `luci-app-openclash` - Clash 内核（v0.47.156）
+  - `luci-app-openclash` - Clash 内核
   - `luci-app-openclaw` - OpenClaw v2.0.2
   - `luci-app-syncdial` - 同步拨号
   - `luci-app-timewol` - 定时唤醒
