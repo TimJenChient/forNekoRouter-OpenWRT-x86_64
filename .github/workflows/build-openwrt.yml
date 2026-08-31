@@ -100,7 +100,7 @@ jobs:
           make defconfig
           grep -q '^CONFIG_TARGET_x86_64=y' .config
           grep -q '^CONFIG_USE_APK=y' .config
-          grep -q '^CONFIG_TARGET_ROOTFS_PARTSIZE=3072$' .config
+          grep -q '^CONFIG_TARGET_ROOTFS_PARTSIZE=8192$' .config
 
       - name: Download sources
         shell: bash
