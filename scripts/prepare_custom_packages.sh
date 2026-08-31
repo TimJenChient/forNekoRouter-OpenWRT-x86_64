@@ -73,7 +73,7 @@ copy_dir "${WORK_DIR}/wrtbwmon-ui/luci-app-wrtbwmon" "luci-app-wrtbwmon"
 clone_repo "wrtbwmon" "https://github.com/brvphoenix/wrtbwmon.git" "master"
 copy_dir "${WORK_DIR}/wrtbwmon/wrtbwmon" "wrtbwmon"
 
-clone_repo "argon-theme" "https://github.com/jerrykuku/luci-theme-argon.git" "v2.4.3"
+clone_repo "argon-theme" "https://github.com/jerrykuku/luci-theme-argon.git" "master"
 copy_dir "${WORK_DIR}/argon-theme" "luci-theme-argon"
 
 clone_repo "argon-config" "https://github.com/jerrykuku/luci-app-argon-config.git" "master"
@@ -82,7 +82,7 @@ copy_dir "${WORK_DIR}/argon-config" "luci-app-argon-config"
 clone_repo "torbp" "https://github.com/zerolabnet/luci-app-torbp.git" "1.0"
 copy_dir "${WORK_DIR}/torbp" "luci-app-torbp"
 
-clone_repo "openclash" "https://github.com/vernesong/OpenClash.git" "v0.47.156"
+clone_repo "openclash" "https://github.com/vernesong/OpenClash.git" "master"
 copy_dir "${WORK_DIR}/openclash/luci-app-openclash" "luci-app-openclash"
 
 clone_repo "wechatpush" "https://github.com/tty228/luci-app-wechatpush.git" "v3.6.12"
