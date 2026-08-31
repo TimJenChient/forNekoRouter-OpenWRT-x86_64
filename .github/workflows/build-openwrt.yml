@@ -21,7 +21,7 @@ env:
   TARGET: x86
   SUBTARGET: 64
   PROFILE: generic
-  ROOTFS_PARTSIZE: "3072"
+  ROOTFS_PARTSIZE: "8192"
 
 jobs:
   build:
