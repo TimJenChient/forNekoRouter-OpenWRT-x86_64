@@ -76,7 +76,7 @@ clone_repo "wrtbwmon-ui" "https://github.com/brvphoenix/luci-app-wrtbwmon.git" "
 copy_dir "${WORK_DIR}/wrtbwmon-ui/luci-app-wrtbwmon" "luci-app-wrtbwmon"
 
 clone_repo "vmlinux-btf" "https://github.com/kenzok8/vmlinux-btf.git" "main"
-copy_dir "${WORK_DIR}/vmlinux-btf" "vmlinux-btf"
+copy_dir "${WORK_DIR}/vmlinux-btf/vmlinux-btf" "vmlinux-btf"
 
 clone_repo "wrtbwmon" "https://github.com/brvphoenix/wrtbwmon.git" "master"
 copy_dir "${WORK_DIR}/wrtbwmon/wrtbwmon" "wrtbwmon"
