@@ -54,6 +54,11 @@ rewrite_makefile_if_needed() {
 clone_repo "diskman" "https://github.com/sbwml/luci-app-diskman.git" "main"
 copy_dir "${WORK_DIR}/diskman/luci-app-diskman" "luci-app-diskman"
 
+clone_repo "diskman" "https://github.com/kenzok8/openwrt-daede.git" "main"
+copy_dir "${WORK_DIR}/daede/luci-app-daede/dae" "dae"
+copy_dir "${WORK_DIR}/daede/luci-app-daede/daed" "daed"
+copy_dir "${WORK_DIR}/daede/luci-app-daede/luci-app-daede" "luci-app-daede"
+
 clone_repo "lucky" "https://github.com/kenzok8/openwrt-packages.git" "master"
 copy_dir "${WORK_DIR}/lucky/luci-app-lucky/luci-app-lucky" "luci-app-lucky"
 copy_dir "${WORK_DIR}/lucky/luci-app-lucky/lucky" "lucky"
@@ -102,6 +107,7 @@ required_makefiles=(
   "kmod-amneziawg/Makefile"
   "luci-app-argon-config/Makefile"
   "luci-app-diskman/Makefile"
+  "luci-app-daede/Makefile"
   "luci-app-lucky/Makefile"
   "luci-app-openclash/Makefile"
   "luci-app-openclaw/Makefile"
@@ -113,6 +119,8 @@ required_makefiles=(
   "luci-proto-amneziawg/Makefile"
   "luci-theme-argon/Makefile"
   "lucky/Makefile"
+  "dae/Makefile"
+  "daede/Makefile"
   "wrtbwmon/Makefile"
 )
 
