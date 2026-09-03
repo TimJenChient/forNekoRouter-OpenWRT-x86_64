@@ -120,7 +120,7 @@ required_makefiles=(
   "luci-theme-argon/Makefile"
   "lucky/Makefile"
   "dae/Makefile"
-  "daede/Makefile"
+  "daed/Makefile"
   "wrtbwmon/Makefile"
 )
 
