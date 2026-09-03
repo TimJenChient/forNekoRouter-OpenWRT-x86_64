@@ -54,11 +54,6 @@ rewrite_makefile_if_needed() {
 clone_repo "diskman" "https://github.com/sbwml/luci-app-diskman.git" "main"
 copy_dir "${WORK_DIR}/diskman/luci-app-diskman" "luci-app-diskman"
 
-clone_repo "daede" "https://github.com/kenzok8/openwrt-daede.git" "main"
-copy_dir "${WORK_DIR}/daede/dae" "dae"
-copy_dir "${WORK_DIR}/daede/daed" "daed"
-copy_dir "${WORK_DIR}/daede/luci-app-daede" "luci-app-daede"
-
 clone_repo "lucky" "https://github.com/kenzok8/openwrt-packages.git" "master"
 copy_dir "${WORK_DIR}/lucky/luci-app-lucky/luci-app-lucky" "luci-app-lucky"
 copy_dir "${WORK_DIR}/lucky/luci-app-lucky/lucky" "lucky"
@@ -74,9 +69,6 @@ copy_dir "${WORK_DIR}/timewol" "luci-app-timewol"
 
 clone_repo "wrtbwmon-ui" "https://github.com/brvphoenix/luci-app-wrtbwmon.git" "release-2.0.13"
 copy_dir "${WORK_DIR}/wrtbwmon-ui/luci-app-wrtbwmon" "luci-app-wrtbwmon"
-
-clone_repo "vmlinux-btf" "https://github.com/kenzok8/vmlinux-btf.git" "main"
-copy_dir "${WORK_DIR}/vmlinux-btf/vmlinux-btf" "vmlinux-btf"
 
 clone_repo "wrtbwmon" "https://github.com/brvphoenix/wrtbwmon.git" "master"
 copy_dir "${WORK_DIR}/wrtbwmon/wrtbwmon" "wrtbwmon"
@@ -110,7 +102,6 @@ required_makefiles=(
   "kmod-amneziawg/Makefile"
   "luci-app-argon-config/Makefile"
   "luci-app-diskman/Makefile"
-  "luci-app-daede/Makefile"
   "luci-app-lucky/Makefile"
   "luci-app-openclash/Makefile"
   "luci-app-openclaw/Makefile"
@@ -121,10 +112,7 @@ required_makefiles=(
   "luci-app-wechatpush/Makefile"
   "luci-proto-amneziawg/Makefile"
   "luci-theme-argon/Makefile"
-  "vmlinux-btf/Makefile"
   "lucky/Makefile"
-  "dae/Makefile"
-  "daed/Makefile"
   "wrtbwmon/Makefile"
 )
 
