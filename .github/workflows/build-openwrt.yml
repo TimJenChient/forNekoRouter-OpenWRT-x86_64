@@ -82,6 +82,14 @@ jobs:
           ./scripts/feeds update -a
           ./scripts/feeds install -a
 
+      - name: Integrate sonic-fullcone
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "${OPENWRT_DIR}"
+          cd "${OPENWRT_DIR}"
+          curl -sSL https://raw.githubusercontent.com/mufeng05/openwrt-sonic-fullcone/master/add_sonic_fullcone.sh | bash
+
       - name: Sync third-party packages
         shell: bash
         run: |
