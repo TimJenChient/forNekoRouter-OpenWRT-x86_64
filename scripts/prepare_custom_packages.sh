@@ -54,7 +54,7 @@ rewrite_makefile_if_needed() {
 clone_repo "diskman" "https://github.com/sbwml/luci-app-diskman.git" "main"
 copy_dir "${WORK_DIR}/diskman/luci-app-diskman" "luci-app-diskman"
 
-clone_repo "diskman" "https://github.com/kenzok8/openwrt-daede.git" "main"
+clone_repo "daede" "https://github.com/kenzok8/openwrt-daede.git" "main"
 copy_dir "${WORK_DIR}/daede/luci-app-daede/dae" "dae"
 copy_dir "${WORK_DIR}/daede/luci-app-daede/daed" "daed"
 copy_dir "${WORK_DIR}/daede/luci-app-daede/luci-app-daede" "luci-app-daede"
