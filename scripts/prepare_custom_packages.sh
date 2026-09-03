@@ -55,9 +55,9 @@ clone_repo "diskman" "https://github.com/sbwml/luci-app-diskman.git" "main"
 copy_dir "${WORK_DIR}/diskman/luci-app-diskman" "luci-app-diskman"
 
 clone_repo "daede" "https://github.com/kenzok8/openwrt-daede.git" "main"
-copy_dir "${WORK_DIR}/daede/luci-app-daede/dae" "dae"
-copy_dir "${WORK_DIR}/daede/luci-app-daede/daed" "daed"
-copy_dir "${WORK_DIR}/daede/luci-app-daede/luci-app-daede" "luci-app-daede"
+copy_dir "${WORK_DIR}/daede/dae" "dae"
+copy_dir "${WORK_DIR}/daede/daed" "daed"
+copy_dir "${WORK_DIR}/daede/luci-app-daede" "luci-app-daede"
 
 clone_repo "lucky" "https://github.com/kenzok8/openwrt-packages.git" "master"
 copy_dir "${WORK_DIR}/lucky/luci-app-lucky/luci-app-lucky" "luci-app-lucky"
