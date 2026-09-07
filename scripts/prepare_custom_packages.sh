@@ -77,7 +77,7 @@ clone_repo "bandix-plus-ui" "https://github.com/timsaya/luci-app-bandix-plus.git
 copy_dir "${WORK_DIR}/bandix-plus-ui/luci-app-bandix-plus" "luci-app-bandix-plus"
 
 clone_repo "bandix-plus" "https://github.com/timsaya/openwrt-bandix-plus.git" "main"
-copy_dir "${WORK_DIR}/bandix-plus/openwrt-bandix-plus" "openwrt-bandix-plus"
+copy_dir "${WORK_DIR}/bandix-plus/openwrt-bandix-plus" "bandix-plus"
 
 clone_repo "argon-theme" "https://github.com/jerrykuku/luci-theme-argon.git" "master"
 copy_dir "${WORK_DIR}/argon-theme" "luci-theme-argon"
@@ -121,7 +121,7 @@ required_makefiles=(
   "luci-theme-argon/Makefile"
   "lucky/Makefile"
   "wrtbwmon/Makefile"
-  "openwrt-bandix-plus/Makefile"
+  "bandix-plus/Makefile"
 )
 
 for rel in "${required_makefiles[@]}"; do
