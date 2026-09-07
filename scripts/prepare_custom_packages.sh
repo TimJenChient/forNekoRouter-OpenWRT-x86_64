@@ -73,6 +73,12 @@ copy_dir "${WORK_DIR}/wrtbwmon-ui/luci-app-wrtbwmon" "luci-app-wrtbwmon"
 clone_repo "wrtbwmon" "https://github.com/brvphoenix/wrtbwmon.git" "master"
 copy_dir "${WORK_DIR}/wrtbwmon/wrtbwmon" "wrtbwmon"
 
+clone_repo "bandix-plus-ui" "https://github.com/timsaya/luci-app-bandix-plus.git" "main"
+copy_dir "${WORK_DIR}/bandix-plus-ui/luci-app-bandix-plus" "luci-app-bandix-plus"
+
+clone_repo "bandix-plus" "https://github.com/timsaya/openwrt-bandix-plus.git" "main"
+copy_dir "${WORK_DIR}/bandix-plus/openwrt-bandix-plus" "openwrt-bandix-plus"
+
 clone_repo "argon-theme" "https://github.com/jerrykuku/luci-theme-argon.git" "master"
 copy_dir "${WORK_DIR}/argon-theme" "luci-theme-argon"
 
@@ -84,6 +90,11 @@ copy_dir "${WORK_DIR}/torbp" "luci-app-torbp"
 
 clone_repo "openclash" "https://github.com/vernesong/OpenClash.git" "master"
 copy_dir "${WORK_DIR}/openclash/luci-app-openclash" "luci-app-openclash"
+
+clone_repo "daede" "https://github.com/kenzok8/openwrt-daede.git" "main"
+copy_dir "${WORK_DIR}/daede/dae" "dae"
+copy_dir "${WORK_DIR}/daede/daed" "daed"
+copy_dir "${WORK_DIR}/daede/luci-app-daede" "luci-app-daede"
 
 clone_repo "wechatpush" "https://github.com/tty228/luci-app-wechatpush.git" "v3.6.12"
 copy_dir "${WORK_DIR}/wechatpush" "luci-app-wechatpush"
