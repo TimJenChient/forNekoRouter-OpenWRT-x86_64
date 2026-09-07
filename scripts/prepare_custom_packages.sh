@@ -114,17 +114,22 @@ required_makefiles=(
   "luci-app-argon-config/Makefile"
   "luci-app-diskman/Makefile"
   "luci-app-lucky/Makefile"
+  "luci-app-daede/Makefile"
   "luci-app-openclash/Makefile"
   "luci-app-openclaw/Makefile"
   "luci-app-syncdial/Makefile"
   "luci-app-timewol/Makefile"
   "luci-app-torbp/Makefile"
   "luci-app-wrtbwmon/Makefile"
+  "luci-app-bandix-plus/Makefile"
   "luci-app-wechatpush/Makefile"
   "luci-proto-amneziawg/Makefile"
   "luci-theme-argon/Makefile"
   "lucky/Makefile"
+  "dae/Makefile"
+  "daed/Makefile"
   "wrtbwmon/Makefile"
+  "openwrt-bandix-plus/Makefile"
 )
 
 for rel in "${required_makefiles[@]}"; do
