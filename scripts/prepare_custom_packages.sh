@@ -91,12 +91,6 @@ copy_dir "${WORK_DIR}/torbp" "luci-app-torbp"
 clone_repo "openclash" "https://github.com/vernesong/OpenClash.git" "master"
 copy_dir "${WORK_DIR}/openclash/luci-app-openclash" "luci-app-openclash"
 
-clone_repo "daede" "https://github.com/kenzok8/openwrt-daede.git" "main"
-copy_dir "${WORK_DIR}/daede/dae" "dae"
-copy_dir "${WORK_DIR}/daede/daed" "daed"
-copy_dir "${WORK_DIR}/daede/luci-app-daede" "luci-app-daede"
-copy_dir "${WORK_DIR}/daede/vmlinux-btf" "vmlinux-btf"
-
 clone_repo "wechatpush" "https://github.com/tty228/luci-app-wechatpush.git" "v3.6.12"
 copy_dir "${WORK_DIR}/wechatpush" "luci-app-wechatpush"
 
@@ -115,7 +109,6 @@ required_makefiles=(
   "luci-app-argon-config/Makefile"
   "luci-app-diskman/Makefile"
   "luci-app-lucky/Makefile"
-  "luci-app-daede/Makefile"
   "luci-app-openclash/Makefile"
   "luci-app-openclaw/Makefile"
   "luci-app-syncdial/Makefile"
@@ -127,9 +120,6 @@ required_makefiles=(
   "luci-proto-amneziawg/Makefile"
   "luci-theme-argon/Makefile"
   "lucky/Makefile"
-  "dae/Makefile"
-  "daed/Makefile"
-  "vmlinux-btf/Makefile"
   "wrtbwmon/Makefile"
   "openwrt-bandix-plus/Makefile"
 )
