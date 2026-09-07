@@ -95,9 +95,7 @@ clone_repo "daede" "https://github.com/kenzok8/openwrt-daede.git" "main"
 copy_dir "${WORK_DIR}/daede/dae" "dae"
 copy_dir "${WORK_DIR}/daede/daed" "daed"
 copy_dir "${WORK_DIR}/daede/luci-app-daede" "luci-app-daede"
-
-clone_repo "vmlinux-btf" "https://github.com/QiuSimons/vmlinux-btf.git" "master"
-copy_dir "${WORK_DIR}/vmlinux-btf" "vmlinux-btf"
+copy_dir "${WORK_DIR}/daede/vmlinux-btf" "vmlinux-btf"
 
 clone_repo "wechatpush" "https://github.com/tty228/luci-app-wechatpush.git" "v3.6.12"
 copy_dir "${WORK_DIR}/wechatpush" "luci-app-wechatpush"
@@ -131,6 +129,7 @@ required_makefiles=(
   "lucky/Makefile"
   "dae/Makefile"
   "daed/Makefile"
+  "vmlinux-btf/Makefile"
   "wrtbwmon/Makefile"
   "openwrt-bandix-plus/Makefile"
 )
