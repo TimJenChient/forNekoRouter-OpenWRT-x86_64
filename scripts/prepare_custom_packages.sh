@@ -58,7 +58,7 @@ clone_repo "lucky" "https://github.com/kenzok8/openwrt-packages.git" "master"
 copy_dir "${WORK_DIR}/lucky/luci-app-lucky/luci-app-lucky" "luci-app-lucky"
 copy_dir "${WORK_DIR}/lucky/luci-app-lucky/lucky" "lucky"
 
-clone_repo "openclaw" "https://github.com/10000ge10000/luci-app-openclaw.git" "v2.0.2"
+clone_repo "openclaw" "https://github.com/10000ge10000/luci-app-openclaw.git" "main"
 copy_dir "${WORK_DIR}/openclaw" "luci-app-openclaw"
 
 clone_repo "syncdial" "https://github.com/BenjaminX/luci-app-syncdial.git" "master"
@@ -66,12 +66,6 @@ copy_dir "${WORK_DIR}/syncdial" "luci-app-syncdial"
 
 clone_repo "timewol" "https://github.com/kiddin9/luci-app-timewol.git" "main"
 copy_dir "${WORK_DIR}/timewol" "luci-app-timewol"
-
-clone_repo "wrtbwmon-ui" "https://github.com/brvphoenix/luci-app-wrtbwmon.git" "release-2.0.13"
-copy_dir "${WORK_DIR}/wrtbwmon-ui/luci-app-wrtbwmon" "luci-app-wrtbwmon"
-
-clone_repo "wrtbwmon" "https://github.com/brvphoenix/wrtbwmon.git" "master"
-copy_dir "${WORK_DIR}/wrtbwmon/wrtbwmon" "wrtbwmon"
 
 clone_repo "bandix-plus-ui" "https://github.com/timsaya/luci-app-bandix-plus.git" "main"
 copy_dir "${WORK_DIR}/bandix-plus-ui/luci-app-bandix-plus" "luci-app-bandix-plus"
@@ -91,7 +85,7 @@ copy_dir "${WORK_DIR}/torbp" "luci-app-torbp"
 clone_repo "openclash" "https://github.com/vernesong/OpenClash.git" "master"
 copy_dir "${WORK_DIR}/openclash/luci-app-openclash" "luci-app-openclash"
 
-clone_repo "wechatpush" "https://github.com/tty228/luci-app-wechatpush.git" "v3.6.12"
+clone_repo "wechatpush" "https://github.com/tty228/luci-app-wechatpush.git" "master"
 copy_dir "${WORK_DIR}/wechatpush" "luci-app-wechatpush"
 
 clone_repo "awg" "https://github.com/2Grey/awg-openwrt.git" "master"
@@ -114,13 +108,11 @@ required_makefiles=(
   "luci-app-syncdial/Makefile"
   "luci-app-timewol/Makefile"
   "luci-app-torbp/Makefile"
-  "luci-app-wrtbwmon/Makefile"
   "luci-app-bandix-plus/Makefile"
   "luci-app-wechatpush/Makefile"
   "luci-proto-amneziawg/Makefile"
   "luci-theme-argon/Makefile"
   "lucky/Makefile"
-  "wrtbwmon/Makefile"
   "bandix-plus/Makefile"
 )
 
