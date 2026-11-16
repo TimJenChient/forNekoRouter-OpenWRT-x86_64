@@ -45,7 +45,6 @@ rewrite_makefile_if_needed() {
 
   if [[ -f "${file}" ]]; then
     sed -i 's#\.\./\.\./luci\.mk#$(TOPDIR)/feeds/luci/luci.mk#g' "${file}"
-    sed -i 's/libstdcpp6/libstdcpp6/g' "${file}"
     sed -i 's/+tor +tor-geoip +obfs4proxy/+tor-geoip +obfs4proxy/g' "${file}"
     sed -i 's/+tor-basic +tor-geoip +obfs4proxy/+tor-geoip +obfs4proxy/g' "${file}"
   fi
