@@ -57,9 +57,6 @@ clone_repo "lucky" "https://github.com/gdy666/luci-app-lucky" "main"
 copy_dir "${WORK_DIR}/lucky/luci-app-lucky" "luci-app-lucky"
 copy_dir "${WORK_DIR}/lucky/lucky" "lucky"
 
-clone_repo "openclaw" "https://github.com/10000ge10000/luci-app-openclaw.git" "main"
-copy_dir "${WORK_DIR}/openclaw" "luci-app-openclaw"
-
 clone_repo "syncdial" "https://github.com/BenjaminX/luci-app-syncdial.git" "master"
 copy_dir "${WORK_DIR}/syncdial" "luci-app-syncdial"
 
@@ -103,7 +100,6 @@ required_makefiles=(
   "luci-app-diskman/Makefile"
   "luci-app-lucky/Makefile"
   "luci-app-openclash/Makefile"
-  "luci-app-openclaw/Makefile"
   "luci-app-syncdial/Makefile"
   "luci-app-timewol/Makefile"
   "luci-app-torbp/Makefile"
