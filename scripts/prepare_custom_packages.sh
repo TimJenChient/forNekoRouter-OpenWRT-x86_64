@@ -90,7 +90,6 @@ copy_dir "${WORK_DIR}/awg/amneziawg-tools" "amneziawg-tools"
 copy_dir "${WORK_DIR}/awg/luci-proto-amneziawg" "luci-proto-amneziawg"
 
 rewrite_makefile_if_needed "${CUSTOM_DIR}/luci-app-timewol/Makefile"
-rewrite_makefile_if_needed "${CUSTOM_DIR}/luci-app-openclaw/Makefile"
 rewrite_makefile_if_needed "${CUSTOM_DIR}/luci-app-torbp/Makefile"
 
 required_makefiles=(
